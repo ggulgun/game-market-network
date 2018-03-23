@@ -1,0 +1,20 @@
+{
+  "name": "game-market-network",
+  "version": "0.0.1",
+  "description": "Game Market Network",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "Gokberk G",
+  "email": "gg@pwnage.co",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "mocha": "latest"
+  }
+}

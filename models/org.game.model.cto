@@ -15,8 +15,8 @@ participant market identified by owner{
  o String owner
  o Double account_balance
 }
-
 enum GameType {
+
   o Mmo
   o Simulations
   o Adventure

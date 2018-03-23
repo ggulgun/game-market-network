@@ -1,0 +1,58 @@
+namespace org.game.model
+
+concept address{
+  o String email optional
+} 
+
+participant customer identified by cust_id{
+  o String name  
+  o String cust_id  
+  o address add
+  o Double account_balance
+}
+
+participant market identified by owner{
+ o String owner
+ o Double account_balance
+}
+
+enum GameType {
+  o Mmo
+  o Simulations
+  o Adventure
+  o RTS
+  o Puzzle
+  o Action
+  o Fps
+  o Rpg
+}
+
+asset cart identified by order_id{
+ o String  order_id
+ o game[] game_items
+}
+
+asset receipt identified by receipt_no{
+ o String  receipt_no
+ o Double total
+}
+
+asset game identified by game_id{
+ o String game_id 
+ o Double cost
+ o Double quantity
+ o GameType type
+}
+
+transaction addtocart{
+  o String order_id
+  o Double quantity
+  --> game game_item
+}
+
+transaction order {
+ 	o String order_id
+    --> customer cust
+   --> cart cart_items
+   --> market markt
+}
